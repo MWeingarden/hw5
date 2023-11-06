@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Examples</title>
+</head>
+<body>
+    <h1>JavaScript Examples</h1>
 
+    <h2>1. Displaying an Alert</h2>
+    <button onclick="showAlert()">Click me for an alert</button>
+
+    <h2>2. Changing Text Dynamically</h2>
+    <p id="textExample">This text can be changed with JavaScript.</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <h2>3. Handling Form Input</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="greetUser()">Greet Me</button>
+    <p id="greeting"></p>
+
+    <h2>4. Toggling Visibility</h2>
+    <button onclick="toggleVisibility()">Toggle Visibility</button>
+    <p id="toggleExample">This paragraph can be hidden or shown.</p>
+
+    <h2>5. Working with Arrays</h2>
+    <ul id="fruitsList">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+    </ul>
+    <button onclick="addFruit()">Add a Fruit</button>
+
+    <script>
+        // Example 1
+        function showAlert() {
+            alert('Hello, this is an alert!');
+        }
+
+        // Example 2
+        function changeText() {
+            document.getElementById('textExample').innerHTML = 'Text has been changed!';
+        }
+
+        // Example 3
+        function greetUser() {
+            const name = document.getElementById('nameInput').value;
+            document.getElementById('greeting').textContent = 'Hello, ' + name + '!';
+        }
+
+        // Example 4
+        function toggleVisibility() {
+            const element = document.getElementById('toggleExample');
+            element.style.display = element.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Example 5
+        function addFruit() {
+            const fruit = prompt('Enter a fruit name:');
+            const fruitsList = document.getElementById('fruitsList');
+            const newFruit = document.createElement('li');
+            newFruit.textContent = fruit;
+            fruitsList.appendChild(newFruit);
+        }
+    </script>
+</body>
+</html>
